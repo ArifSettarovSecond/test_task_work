@@ -16,13 +16,21 @@
 ##Задание 2
 1. составить запрос, который выведет список email'лов встречающихся более чем у одного пользователя
 
-    ```sql SELECT email FROM users GROUP BY email HAVING COUNT(email) > 1;```
+```sql
+   SELECT email FROM users 
+   GROUP BY email 
+   HAVING COUNT(email) > 1;
+```
 2.вывести список логинов пользователей, которые не сделали ни одного заказа
-    ```SELECT users.login FROM users
+```sql
+    SELECT users.login FROM users
     WHERE users.id NOT IN (SELECT user_id FROM orders)
-    GROUP BY users.login```
+    GROUP BY users.login
+```
+    
 3.вывести список логинов пользователей которые сделали более двух заказов
-   ```SELECT users.login FROM orders
-   LEFT JOIN users ON users.id = orders.user_id
-   GROUP BY users.login HAVING count(orders.user_id)>2;
+```sql 
+ SELECT users.login FROM orders
+ LEFT JOIN users ON users.id = orders.user_id
+ GROUP BY users.login HAVING count(orders.user_id)>2;
    ```

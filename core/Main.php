@@ -5,7 +5,6 @@ namespace core;
 class Main
 {
     protected $database;
-    protected $session;
 
     public function setDatabase(Database $database)
     {
@@ -14,7 +13,6 @@ class Main
 
     public function startSession()
     {
-
         session_start();
     }
 
@@ -22,6 +20,7 @@ class Main
     {
         $_SESSION[$var_name] = $value;
     }
+
     public function delete_session_var($var_name)
     {
         $_SESSION[$var_name] = '';
@@ -33,11 +32,7 @@ class Main
 
     }
 
-    public function checkUserBySessionKey($key)
-    {
-        return $this->database->checkSession($key);
-    }
-
+    /*Ренедерит (.*).PHP визуал*/
     public function render($path)
     {
         return require $path;

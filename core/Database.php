@@ -25,12 +25,8 @@ class Database
         $this->db = mysqli_connect($this->_host, $this->_user, $this->_password, $this->_dbname);
     }
 
-    public function getDatabaseInstance()
-    {
-        return $this->db;
-    }
 
-
+    /*Экранируем переменные чтобы не было инъекций*/
     public function sql_prepare($value)
     {
 
@@ -53,6 +49,7 @@ class Database
         }
     }
 
+    /*Генерация ключа сессии и соли для пароля*/
     function genarateKey($count)
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

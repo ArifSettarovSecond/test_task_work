@@ -1,7 +1,6 @@
 <?php
 
 namespace models;
-//require 'models/Users.php';
 use \core\Database;
 use \models\Users;
 

@@ -19,11 +19,10 @@ class DotEnv
         $this->path = $path;
     }
 
+
+    /*Добавляем переменные из локального в глобальный env*/
     public function load(): void
     {
-        if (!is_readable($this->path)) {
-            throw new \RuntimeException(sprintf('%s не может быть прочтен', $this->path));
-        }
 
         $lines = file($this->path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         foreach ($lines as $line) {

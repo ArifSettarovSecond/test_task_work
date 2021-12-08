@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap');
+/*
+text #4c4c4c
+*/
+html,body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+*{
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.tab{
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    height: 0;
+}
+.tab.tab_active{
+    opacity: 1;
+    position: relative;
+    visibility: visible;
+    height: auto;
+}
+.login_tab{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #F2F2F2;
+    border-radius: 16px;
+    padding: 24px;
+    width: 400px;
+}
+.login_tab > .title{
+    font-size: 24px;
+    font-weight: 600;
+    color: #4c4c4c;
+    margin-bottom: 16px;
+}
+.login_tab > input{
+    height: 46px;
+    border-radius: 6px;
+    border: 1px solid #777777;
+    padding: 0 14px;
+    font-size: 14px;
+    color: #4c4c4c;
+    margin-bottom: 12px;
+}
+input:focus-visible,
+input:active, input:focus{
+    outline: none;
+    border: 1px solid #000 !important;
+    background: #f7f7f7;
+}
+
+.buttons{
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons>.login_but{
+    background: #ecb11a;
+    color: white;
+    width: 150px;
+    font-size: 16px;
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.buttons>.login_but:hover{
+    background: #ecba1a;
+    box-shadow: 0 0 5px #ecba1a;
+}
+.login_tab>.buttons>.register_link{
+    color: #4c4c4c;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.buttons>.register_link:hover{
+    color: #ecba1a;
+}
+
+.profile{
+    padding: 50px 200px;
+}
+.profile > .page_top{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+.page_top>.page_title{
+    color: #4c4c4c;
+    font-size: 18px;
+}
+.page_top>.page_title>span{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.page_top>.page_logout>a{
+    text-decoration: none;
+    color: #4c4c4c;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.page_top>.page_logout>a:hover{
+    color: #ecba1a;
+}
+.login_tab.change_username {
+    align-self: flex-start;
+}
+.items{
+    display: flex;
+    justify-content: space-between;
+}
+
+.notification{
+    position: absolute;
+    right: 32px;
+    top: -50px;
+    width: 300px;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    transition: top .3s ease-in-out;
+}
+.notification_success{
+    top: 40px;
+    background: #21d521;
+}
+.notification_error{
+    top: 40px;
+    background: #d52121;
+}
